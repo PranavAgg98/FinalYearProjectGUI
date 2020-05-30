@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+
+  <title>Result:ZCA+</title>  
+
+<link href="./main.3f6952e4.css" rel="stylesheet"></head>
+
+<body class="">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+ <!-- Add your content of header -->
+<header>
+  <nav class="navbar  navbar-fixed-top navbar-default">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="./index.html" title="">01 : Home</a></li>
+          <li><a href="./works.html" title="">02 : About</a></li>
+        <li><a href="./res1.html" title="">03 : Result:ZCA</a></li>
+          <li><a href="./res2.html" title="">04 : Result:AutoEncoder</a></li>
+         
+        </ul>
+
+
+
+      </div> 
+    </div>
+  </nav>
+</header>
+
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">03 : Result: ZCA</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h3>Methodology</h3>
+                  <p> The first step was performing mean normalization, using which a covariance matrix was computed, and Singular Value Decomposition (SVD) was applied on the covariance matrix to bring out eigenvalues and eigenvectors of the data.</p>
+                  <p> Then, to achieve decorrelation between features, the dataset was projected onto the eigenvectors obtained in the previous step. In the next step, as a part of regularization process, the data were divided by the square-root of eigenvalues (after adding a small constant epsilon, ∈ ). </p>
+                  <p> The decorrelated data is put into a Neural network classifier. The Classifier used is a 3 hidden layer neural network with 25, 10 and 8 neurons respectively. It is run for 100 epochs.</p>
+                </div>
+                 <div class="col-xs-12 col-md-6">
+                  <h3>Pre-ZCA Classification </h3>
+                  <p>The dataset is put into the neural network classifier without applying ZCA for decorrelation.
+                  We can observe the plot of the data before ZCA.</p>
+                  <p>As we can see from table below the average accuracy of classification is observed to be 92.1%</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="./assets/images/prezca.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-12">
+                  <div class="table-responsive">
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Star</th>
+                        <th>Galaxy</th>
+                        <th>Quasars</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Accuracy</td>
+                        <td>0.89888175</td>
+                        <td>0.92862241</td>
+                        <td>0.93647395</td>
+                      </tr>
+                    </tbody>
+                    </table>
+                  </div>
+            
+              </div>
+              <div class="col-xs-12 col-md-6">
+                  <h3>Post-ZCA Classification </h3>
+                  <p>The dataset is put into the neural network classifier after applying ZCA for decorrelation.
+                  We can observe the plot of the data post ZCA.</p>
+                  <p>As we can see from table below the average accuracy of classification is observed to be 91.9% which is very similar to pre-zca</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="./assets/images/prezca.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-12">
+                  <div class="table-responsive">
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Star</th>
+                        <th>Galaxy</th>
+                        <th>Quasars</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Accuracy</td>
+                        <td>0.89816798</td><td>0.92648108</td><td> 0.91361884</td>
+                    
+                      </tr>
+                    </tbody>
+                    </table>
+                  </div>
+            
+              </div>
+                <div class="col-xs-12">
+                  <h3>Conclusion</h3>
+                  <p> ZCA hasn't helped with the decluttering of the data as the data seems to have adjusted in ratio with the original data leading to an extremely similar 3-D plot for same features.</p>
+                  <p> The accuracy has remain largely unchanged with it taking a slight dip. </p>
+                  <p>ZCA hasn't helped as we hoped and hence,we will attempt Autoencoders in attempt for better results</p>
+                  
+                </div>
+
+
+            </div>
+          </div>
+          
+          
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  });
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+--> <script type="text/javascript" src="./main.70a66962.js"></script></body>
+
+</html>
